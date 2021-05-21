@@ -10,12 +10,11 @@ class _AboutUsViewState extends State<AboutUsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        title: Text("About us")
-      ),
-      body: Center(
-        child: Text("Covid-19 app is dedicated to cutting edge covid-19 information", textAlign: TextAlign.center,)
-      )
-    );
+        appBar: AppBar(title: Text("关于我们"), centerTitle: true),
+        body: Center(
+            child: Text(
+          "致力于提供最新的新冠疫情数据",
+          textAlign: TextAlign.center,
+        )));
   }
 }

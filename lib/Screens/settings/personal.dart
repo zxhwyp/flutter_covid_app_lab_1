@@ -36,7 +36,11 @@ class _PersonalState extends State<Personal>
     super.build(context);
     _context = context;
     return Scaffold(
-      appBar: AppBar(title: Text("Settings")),
+      appBar: AppBar(
+        title: Text("个人信息"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
       backgroundColor: Color.fromRGBO(236, 236, 236, 1),
       body: SafeArea(
           child: Stack(
@@ -116,7 +120,7 @@ class _PersonalState extends State<Personal>
   }
 
   Widget personalInfo() {
-    List titleArr = ['Personal info', 'Feedback', 'About us'];
+    List titleArr = ['个人信息', '反馈', '关于我们'];
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -210,7 +214,7 @@ class _PersonalState extends State<Personal>
         },
         child: Container(
           alignment: Alignment.center,
-          child: Text('LOGOUT', style: TextStyle(color: Colors.white)),
+          child: Text('退出登录', style: TextStyle(color: Colors.white)),
         ),
       ),
     ); //登录按钮

@@ -50,7 +50,7 @@ class _PreventionState extends State<Prevention> {
                         }
                       },
                       child: Text(
-                        'Skip',
+                        '跳过',
                         style: TextStyle(
                             fontSize: 15,
                             color: Colors.black,
@@ -75,7 +75,7 @@ class _PreventionState extends State<Prevention> {
                             }
                           },
                           child: Text(
-                            'Next',
+                            '下一步',
                             style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.white,
@@ -152,67 +152,55 @@ class _PreventionState extends State<Prevention> {
         PreventionModel(
             image: 'assets/images/tip1.png',
             richText: tip1,
-            describe:
-                'Keep your distance from others\nto protect them from getting sick too.'),
+            describe: '保持与其他人的接触距离，防止病毒传染'),
         PreventionModel(
             image: 'assets/images/tip2.png',
             richText: tip2,
-            describe:
-                'Wash your hands with soap and water,scrub\nyour hands for at least 20 seconds'),
+            describe: '用香皂洗手，擦洗双手至少20秒钟'),
         PreventionModel(
             image: 'assets/images/tip3.png',
             richText: tip3,
-            describe:
-                'Consider wearing aface mask when you are\nsick with a cough or sneezing'),
+            describe: '出门需要佩戴口罩'),
         PreventionModel(
             image: 'assets/images/tip4.png',
             richText: tip4,
-            describe:
-                'Staying at home will help control the spread of the virus to friends,ths wider community'),
+            describe: '尽量不要去人多的地方或者参加聚会'),
       ];
 
   RichText get tip1 => RichText(
-          text: TextSpan(text: 'Avoid', style: BlackextStyle, children: [
+          text: TextSpan(text: '避免', style: BlackextStyle, children: [
         TextSpan(
-          text: ' Close',
+          text: ' 过紧',
           style: DeepTextStyle,
         ),
         TextSpan(
-          text: ' Contact',
+          text: ' 接触',
           style: BlackextStyle,
         ),
       ]));
 
   RichText get tip2 => RichText(
-          text: TextSpan(text: 'Clean Your ', style: BlackextStyle, children: [
+          text: TextSpan(text: '勤 ', style: BlackextStyle, children: [
         TextSpan(
-          text: 'Hands ',
+          text: '洗手 ',
           style: DeepTextStyle,
-        ),
-        TextSpan(
-          text: 'Often',
-          style: BlackextStyle,
         ),
       ]));
   RichText get tip3 => RichText(
-          text: TextSpan(text: 'Wear a ', style: BlackextStyle, children: [
+          text: TextSpan(text: '佩戴 ', style: BlackextStyle, children: [
         TextSpan(
-          text: 'facemask ',
+          text: '口罩 ',
           style: DeepTextStyle,
         ),
         TextSpan(
-          text: 'if you\n are ',
+          text: '出门 ',
           style: BlackextStyle,
-        ),
-        TextSpan(
-          text: 'sick',
-          style: DeepTextStyle,
         ),
       ]));
   RichText get tip4 => RichText(
-          text: TextSpan(text: 'Stay at ', style: BlackextStyle, children: [
+          text: TextSpan(text: '待在 ', style: BlackextStyle, children: [
         TextSpan(
-          text: 'home',
+          text: '家里',
           style: DeepTextStyle,
         ),
       ]));

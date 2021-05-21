@@ -25,7 +25,7 @@ class Body extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     width: size.width,
-                    height: size.height * 0.25,
+                    height: size.height * 0.3,
                     padding: EdgeInsets.all(kDefaultPadding),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,12 +39,12 @@ class Body extends StatelessWidget {
                               (BuildContext context, AsyncSnapshot snapshot) {
                             return Text(
                               snapshot.hasData
-                                  ? "Welcome, " + snapshot.data['username']
-                                  : "Loading...",
+                                  ? "欢迎, " + snapshot.data['username']
+                                  : "登录...",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 30,
+                                fontSize: 26,
                               ),
                             );
                           },
@@ -53,14 +53,14 @@ class Body extends StatelessWidget {
                           height: size.height * 0.04,
                         ),
                         Text(
-                          'All cases updated',
+                          '美国新冠数据',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          'Last updated on ${DateTime.now().day} ${DateUtil.getMonth(DateTime.now(), short: true)} ${DateTime.now().year}',
+                          '最近更新： ${DateTime.now().day} ${DateUtil.getMonth(DateTime.now(), short: true)} ${DateTime.now().year}',
                           style: TextStyle(color: Colors.white, fontSize: 10),
                         ),
                       ],
@@ -70,7 +70,7 @@ class Body extends StatelessWidget {
                     children: <Widget>[
                       ItemCard(
                         image: "assets/images/confirmed.png",
-                        text: 'Confirmed',
+                        text: '确诊人数',
                         number: Covid19VM.of(context, true)
                                 .covid19totalModel
                                 ?.data
@@ -82,7 +82,7 @@ class Body extends StatelessWidget {
                       ),
                       ItemCard(
                         image: "assets/images/recovered.png",
-                        text: 'Recovered',
+                        text: '康复人数',
                         number: Covid19VM.of(context, true)
                                 .covid19totalModel
                                 ?.data
@@ -94,7 +94,7 @@ class Body extends StatelessWidget {
                       ),
                       ItemCard(
                         image: "assets/images/death.png",
-                        text: 'Death',
+                        text: '死亡人数',
                         number: Covid19VM.of(context, true)
                                 .covid19totalModel
                                 ?.data
@@ -113,21 +113,21 @@ class Body extends StatelessWidget {
                     children: <Widget>[
                       ItemCard(
                         image: "assets/images/self-check.png",
-                        text: 'Self-Check',
+                        text: '自我检查',
                         press: () {
                           Navigator.of(context).pushNamed('/self_check');
                         },
                       ),
                       ItemCard(
                         image: "assets/images/prevention.png",
-                        text: 'Prevention',
+                        text: '自我防护',
                         press: () {
                           Navigator.of(context).pushNamed('/prevention');
                         },
                       ),
                       ItemCard(
                         image: "assets/images/statistics.png",
-                        text: 'Statistics',
+                        text: '统计数据',
                         press: () {
                           Navigator.of(context).pushNamed('/statistics');
                         },

@@ -46,7 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen>
 
     var registerBtn = RoundedButton(
       key: Key('signup_button'),
-      text: "REGISTER",
+      text: "注 册",
       press: () {
         if (formKey.currentState.validate()) {
           setState(() {
@@ -62,26 +62,26 @@ class _SignUpScreenState extends State<SignUpScreen>
     final phoneNumberField = RoundedInputField(
       key: Key('signup_phone_input_field'),
       icon: Icons.phone,
-      hintText: "Phone Number",
+      hintText: "手机号码",
       onSaved: (value) => _phoneNumber = int.parse(value),
     );
     final emailField = RoundedInputField(
       key: Key('signup_email_input_field'),
       icon: Icons.email,
-      hintText: "Email Address",
+      hintText: "邮箱",
       onSaved: (value) => _email = value,
     );
     final usernameField = RoundedInputField(
       key: Key('signup_username_input_field'),
       icon: Icons.person,
-      hintText: "Username",
+      hintText: "账号",
       onSaved: (value) => _username = value,
     );
     final passwordField = RoundedInputField(
       key: Key('signup_password_input_field'),
       obscureText: true,
       icon: Icons.lock,
-      hintText: "Password",
+      hintText: "密码",
       suffixIcon: Icons.visibility,
       onSaved: (value) => _password = value,
     );
@@ -123,24 +123,6 @@ class _SignUpScreenState extends State<SignUpScreen>
                       Navigator.of(context).pushNamed('/login');
                     },
                   ),
-                  OrDivider(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SocialIcon(
-                        iconSrc: "assets/icons/facebook.svg",
-                        press: () {},
-                      ),
-                      SocialIcon(
-                        iconSrc: "assets/icons/twitter.svg",
-                        press: () {},
-                      ),
-                      SocialIcon(
-                        iconSrc: "assets/icons/google-plus.svg",
-                        press: () {},
-                      ),
-                    ],
-                  ),
                   SizedBox(
                     height: size.height * 0.05,
                   ),
@@ -170,7 +152,7 @@ class _SignUpScreenState extends State<SignUpScreen>
   @override
   Future<void> onRegisterSuccess(bool res) async {
     if (res == true) {
-      _showSnackBar(_user.username.toString() + ' signed up successfully.');
+      _showSnackBar(_user.username.toString() + ' 注册成功');
       await FlutterSession().set("token", _user);
 
       setState(() {
@@ -180,7 +162,7 @@ class _SignUpScreenState extends State<SignUpScreen>
       Future.delayed(
           Duration(seconds: 1), () => Navigator.of(context).pushNamed('/home'));
     } else {
-      _showSnackBar('Sign up failed. Username existed.');
+      _showSnackBar('注册失败， 账号已存在');
 
       setState(() {
         isLoading = false;

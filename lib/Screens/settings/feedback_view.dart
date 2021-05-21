@@ -13,13 +13,11 @@ class _FeedBackViewState extends State<FeedBackView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Feedback"),
-          ),
+      appBar: AppBar(title: Text("反馈"), centerTitle: true),
       backgroundColor: Colors.white,
       body: Column(children: [
         Container(
-            margin: EdgeInsets.only(
-                left: 17, right: 17, top: 10, bottom: 10),
+            margin: EdgeInsets.only(left: 17, right: 17, top: 10, bottom: 10),
             height: 146,
             decoration: BoxDecoration(
                 color: Color(0xFFF9F9F9),
@@ -52,17 +50,15 @@ class _FeedBackViewState extends State<FeedBackView> {
                   height: 50,
                   width: 341,
                   child: Center(
-                      child: Text("submit",
-                          style: TextStyle(color: Colors.white)
-                          )
-                          ),
+                      child: Text("提交", style: TextStyle(color: Colors.white))),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(7)),
-                      color:
-                          clickable ? Theme.of(context).primaryColor : Color(0xFFB9B9B9))),
+                      color: clickable
+                          ? Theme.of(context).primaryColor
+                          : Color(0xFFB9B9B9))),
               onTap: () {
                 if (clickable) {
-                  Toast.show("submit success", context);
+                  Toast.show("提交成功", context);
                   Navigator.pop(context);
                 }
               },

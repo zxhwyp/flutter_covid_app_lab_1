@@ -41,11 +41,11 @@ class _LoginScreenState extends State<LoginScreen>
     final usernameField = RoundedInputField(
       key: Key('login_username_input_field'),
       icon: Icons.person,
-      hintText: "Username",
+      hintText: "用户名",
       onSaved: (value) => _username = value,
       validator: (value) {
         if (value.isEmpty) {
-          return 'Field required';
+          return '请输入用户名';
         }
         return null;
       },
@@ -54,12 +54,12 @@ class _LoginScreenState extends State<LoginScreen>
       key: Key('login_password_input_field'),
       obscureText: true,
       icon: Icons.lock,
-      hintText: "Password",
+      hintText: "密码",
       suffixIcon: Icons.visibility,
       onSaved: (value) => _password = value,
       validator: (value) {
         if (value.isEmpty) {
-          return 'Field required';
+          return '请输入密码';
         }
         return null;
       },
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
 
     var loginBtn = RoundedButton(
-      text: "LOGIN",
+      text: "登 录",
       press: () {
         if (formKey.currentState.validate()) {
           setState(() {
@@ -124,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   void onLoginError(Error error) {
-    _showSnackBar("Login failed.");
+    _showSnackBar("登录失败.");
     print(error.toString());
     setState(() {
       isLoading = false;
@@ -133,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Future<void> onLoginSuccess(User user) async {
-    _showSnackBar(user.username.toString() + ' logged in susccessfully.');
+    _showSnackBar(user.username.toString() + ' 登录成功');
     await FlutterSession().set("token", user);
     setState(() {
       isLoading = false;

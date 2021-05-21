@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app_lab_1/Screens/home_screen/home_screen.dart';
-import 'package:flutter_covid_app_lab_1/Screens/notify_screen/notify_screen.dart';
 import 'package:flutter_covid_app_lab_1/Screens/qrcode_screen/qrcode_screen.dart';
 import 'package:flutter_covid_app_lab_1/Screens/settings/personal.dart';
 
@@ -34,15 +33,15 @@ class _HomeControllerState extends State<HomeController> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: "Home",
+            label: "主页",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.qr_code),
-            label: "QR Code",
+            label: "健康码",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: "Settings",
+            label: "个人",
           ),
         ],
       );

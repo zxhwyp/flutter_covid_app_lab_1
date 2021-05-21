@@ -13,43 +13,30 @@ class _PersonalInfoState extends State<PersonalInfo> {
   @override
   void initState() {
     super.initState();
-    FlutterSession().get("token").then((value){
+    FlutterSession().get("token").then((value) {
       user = User.map(value);
-      setState(() {
-        
-      });
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Persional info")
-      )
-      ,body: Container(
-        child: Column(
-          children: [
-            getItem("Usename", user?.username?.toString()??""),
-            getItem("Email", user?.email?.toString()??""),
-            getItem("Phone", user?.phoneNumber?.toString()??"")
-          ]
-        )
-      )
-    );
+        appBar: AppBar(title: Text("个人信息"), centerTitle: true),
+        body: Container(
+            child: Column(children: [
+          getItem("账号", user?.username?.toString() ?? ""),
+          getItem("邮箱", user?.email?.toString() ?? ""),
+          getItem("手机号", user?.phoneNumber?.toString() ?? "")
+        ])));
   }
 
-  Widget getItem(title, value){
+  Widget getItem(title, value) {
     return Container(
-      margin: EdgeInsets.all(10),
-      height: 50,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title),
-          Text(value)
-        ]
-      )
-    );
+        margin: EdgeInsets.all(10),
+        height: 50,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [Text(title), Text(value)]));
   }
 }

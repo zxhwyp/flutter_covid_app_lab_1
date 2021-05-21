@@ -17,13 +17,13 @@ class NoAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          login ? "Don't have an account? " : "Already have an account? ",
+          login ? "还有没有账号？ " : "已经存在账号？ ",
           style: TextStyle(color: kPrimaryColor),
         ),
         GestureDetector(
           onTap: press,
           child: Text(
-            login ? "Sign Up" : "Sign In",
+            login ? "注 册" : "登 录",
             style: TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold),
           ),
         ),

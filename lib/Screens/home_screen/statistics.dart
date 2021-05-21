@@ -21,7 +21,9 @@ class _StatisticsState extends State<Statistics> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Statistics"),
+          title: Text("统计"),
+          centerTitle: true,
+          automaticallyImplyLeading: true,
         ),
         body: SafeArea(
             child: Center(

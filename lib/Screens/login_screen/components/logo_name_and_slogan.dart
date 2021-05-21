@@ -18,23 +18,23 @@ class LogoNameAndSlogan extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Corona",
+              "新冠",
               style: TextStyle(
-                  fontSize: 35,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: kPrimaryColorLight),
             ),
             Text(
-              "Tracer",
+              "病毒",
               style: TextStyle(
-                fontSize: 35,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ],
         ),
         Text(
-          "Caring for the future",
+          "健康管理",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
         )
       ],

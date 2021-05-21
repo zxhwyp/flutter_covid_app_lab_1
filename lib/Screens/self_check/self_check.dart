@@ -17,14 +17,11 @@ class _SelfCheckState extends State<SelfCheck> {
 
   List<AnswerModel> answers = [
     AnswerModel(
-        trouble: 'Have you\nexperienced any\nof the following\nsymptoms:',
-        replenish: 'Fever,Cough,Sneezing,\nSor Throat, Difficult in Breathing'),
-    AnswerModel(trouble: 'Have you\nlost your sense\nof smell or taste？'),
-    AnswerModel(
-        trouble:
-            'Have you\nexperienced constant pain\nor pressure in your chest?'),
-    AnswerModel(trouble: 'Have you\nhad a congestion\nor runny nose?'),
-    AnswerModel(trouble: 'Have you\never experienced vomiting\nor nausea?'),
+        trouble: '是否\n存在以下情形:', replenish: '是否\n存在发烧，咳嗽，打喷嚏，\n喉咙痛，呼吸困难？'),
+    AnswerModel(trouble: '是否\n嗅觉或味觉功能衰减？'),
+    AnswerModel(trouble: '是否\n感觉全身酸痛或者呼吸困难？'),
+    AnswerModel(trouble: '是否\n鼻塞或者流鼻涕？'),
+    AnswerModel(trouble: '是否\n呕吐或者恶心等状况？'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -71,7 +68,7 @@ class _SelfCheckState extends State<SelfCheck> {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                "Self Check up \nfor Covid-19",
+                                "新冠 \n自测",
                                 style: TextStyle(
                                     decoration: TextDecoration.none,
                                     fontSize: 26,
@@ -162,7 +159,7 @@ class _SelfCheckState extends State<SelfCheck> {
                                           color: textWhite,
                                           onPressed: answerNo,
                                           child: Text(
-                                            "No",
+                                            "没有",
                                             style: TextStyle(fontSize: 18),
                                           )),
                                     ),
@@ -175,7 +172,7 @@ class _SelfCheckState extends State<SelfCheck> {
                                           color: textWhite,
                                           onPressed: answerYes,
                                           child: Text(
-                                            "Yes",
+                                            "有",
                                             style: TextStyle(fontSize: 18),
                                           )),
                                     )
@@ -210,7 +207,7 @@ class _SelfCheckState extends State<SelfCheck> {
       current++;
     });
     if (current == 5) {
-      Toast.show("finish !", context,
+      Toast.show("自测完成 !", context,
           duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
     }
   }
