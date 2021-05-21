@@ -7,21 +7,16 @@ import 'package:flutter_covid_app_lab_1/Screens/settings/personal.dart';
 //Author: Ting Sen
 class HomeController extends StatefulWidget {
   @override
-  _HomeControllerState createState() =>
-      _HomeControllerState();
+  _HomeControllerState createState() => _HomeControllerState();
 }
 
-class _HomeControllerState
-    extends State<HomeController> {
+class _HomeControllerState extends State<HomeController> {
   final List<Widget> pages = [
     HomeScreen(
       key: PageStorageKey('HomeScreen'),
     ),
     QRScreen(
       key: PageStorageKey('QRScreen'),
-    ),
-    NotifyScreen(
-      key: PageStorageKey('NotifyScreen'),
     ),
     Personal(
       key: PageStorageKey('Personal'),
@@ -44,10 +39,6 @@ class _HomeControllerState
           BottomNavigationBarItem(
             icon: Icon(Icons.qr_code),
             label: "QR Code",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: "Notification",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),

@@ -1,4 +1,3 @@
-import 'package:flutter_covid_app_lab_1/Screens/news/news_view.dart';
 import 'package:flutter_covid_app_lab_1/utils/data_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_app_lab_1/constants.dart';
@@ -127,45 +126,10 @@ class Body extends StatelessWidget {
                         },
                       ),
                       ItemCard(
-                        image: "assets/images/nearby.png",
-                        text: 'Nearby',
-                        press: () {
-                          Navigator.of(context).pushNamed('/nearby');
-                        },
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: size.height * 0.04,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      ItemCard(
                         image: "assets/images/statistics.png",
                         text: 'Statistics',
                         press: () {
                           Navigator.of(context).pushNamed('/statistics');
-                        },
-                      ),
-                      ItemCard(
-                        image: "assets/images/contacts.png",
-                        text: 'Contacts',
-                        press: () {
-                          Navigator.of(context).pushNamed('/contact');
-                        },
-                      ),
-                      ItemCard(
-                        image: "assets/images/news.png",
-                        text: 'News',
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return NewsView();
-                              },
-                            ),
-                          );
                         },
                       ),
                     ],
